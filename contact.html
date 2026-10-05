@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Kamran’s Velo Innovations</title>
+<meta name="description" content="Contact Kamran’s Velo Innovations to book a discovery call about your Wix Studio or Velo project.">
+<meta name="theme-color" content="#0B0F1A">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<velo-header active="contact"></velo-header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h1>Let’s talk</h1>
+      <p>Tell us a bit about what you need. We’ll get back to you within one business day.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="info-list">
+          <div class="card info-card reveal"><span data-icon="mail"></span><div><h3>Email</h3><p><a href="mailto:team@velocoded.com">team@velocoded.com</a></p></div></div>
+          <div class="card info-card reveal"><span data-icon="phone"></span><div><h3>Phone</h3><p><a href="tel:+923294495833">+92 329 4495833</a></p></div></div>
+          <div class="card info-card reveal"><span data-icon="building"></span><div><h3>Business address</h3><p>1209 Mountain Road Pl NE, Ste R,<br>Albuquerque, NM 87110, USA</p></div></div>
+          <div class="card info-card reveal"><span data-icon="clock"></span><div><h3>Response time</h3><p>Within one business day.</p></div></div>
+        </div>
+
+        <form id="enquiry-form" class="card reveal" novalidate>
+          <div class="row">
+            <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required><div class="err">Please enter your name.</div></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required><div class="err">Please enter a valid email.</div></div>
+          </div>
+          <div class="field">
+            <label for="service">Service</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option>Website Build</option>
+              <option>Custom Velo Development</option>
+              <option>API &amp; Integrations</option>
+              <option>Monthly Retainer</option>
+              <option>Technical audit</option>
+              <option>Something else</option>
+            </select>
+            <div class="err">Please choose a service.</div>
+          </div>
+          <div class="field"><label for="message">What are you looking to build?</label><textarea id="message" name="message" required></textarea><div class="err">Please tell us about your project.</div></div>
+          <button class="btn btn-primary" type="submit">Send enquiry</button>
+          <div class="form-ok" role="status">Thanks! Your email app should open with your message ready to send. If it doesn’t, you can write to us at team@velocoded.com.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<velo-footer></velo-footer>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  (function () {
+    var map = { website: 'Website Build', velo: 'Custom Velo Development', retainer: 'Monthly Retainer' };
+    var s = new URLSearchParams(location.search).get('service');
+    if (s && map[s]) document.getElementById('service').value = map[s];
+  })();
+</script>
+</body>
+</html>
